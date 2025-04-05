@@ -32,12 +32,19 @@ for country in data["data"]:
 
 # If matching country found, display its info
 if found_country:
-        st.markdown(f"### {found_country['name']} ({found_country['unicodeFlag']})")
-        st.image(found_country['flag'], width=300)
-        st.write(f"***Currency:*** {found_country['currency']}")
-        st.write(f"***Dial Code:*** {found_country['dialCode']}")
+    st.markdown(f"### {found_country['name']} ({found_country['unicodeFlag']})")
+    
+    # Show flag if available
+    if found_country.get("flag"):
+        st.image(found_country["flag"], width=300)
+    else:
+        st.info("Flag image not available.")
+    
+    st.write(f"***Currency:*** {found_country['currency']}")
+    st.write(f"***Dial Code:*** {found_country['dialCode']}")
 else:
-    st.warning(" Country not found. Try a different name.")
+    st.warning("Country not found. Try a different name.")
+
 
 
  
