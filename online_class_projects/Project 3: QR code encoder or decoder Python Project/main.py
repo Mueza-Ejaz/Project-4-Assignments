@@ -7,7 +7,7 @@
 import qrcode 
 
 # QR ENCODE CODE:
-data = "If you scanned this QR code, now you owe me a treat!😆🍕" 
+data = "If you scanned this QR code, now you give me a treat!😆🍕" 
 
 img = qrcode.make(data)
 qr = qrcode.QRCode(version = 1, box_size = 10, border = 5)
